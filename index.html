@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Selfie App</title>
+</head>
+<body>
+    <script>
+        if('geolocation' in navigator) {
+            
+            navigator.geolocation.getCurrentPosition(position => {
+            console.log(position);
+            let lat = position.coords.latitude;
+            let long = position.coords.longitude;
+            document.querySelector("#lat").innerHTML = lat.toFixed(2);
+            document.querySelector("#long").innerHTML = long.toFixed(2);
+            
+           
+                                    });
+            
+         } else {
+        console.log('No location for you');
+        }
+
+       
+    </script>
+
+    <h1>Hello!</h1>
+
+    <p>Your latitude is: <span id="lat"> </span></p>
+    <p>Your longitude is: <span id="long">  </span></p>
+
+    
+    
+</body>
+</html>
